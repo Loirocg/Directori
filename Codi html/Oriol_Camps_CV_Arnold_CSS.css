@@ -1,0 +1,19 @@
+h1{
+	text-align: center;
+}
+
+img{
+	float: right;
+}
+
+#cesquerra{
+	float: left; width: 45%
+}
+			
+#cdreta{
+	float: right; width: 45%
+}
+
+#default{
+	clear: both
+}	

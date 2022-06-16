@@ -1,0 +1,45 @@
+﻿using System;
+
+class Class1
+{
+	static void Class()
+	{
+		string missatge;
+
+		missatge = Console.ReadLine();
+
+		bool palindrom = true;
+
+		int Llargada = missatge.Length;
+
+		char[] Missatge;
+		Missatge = missatge.ToCharArray();
+
+		for (int i = 0; i <= Llargada - 1; i++)
+		{
+			if (Missatge[i] == Missatge[Llargada - 1])
+			
+				Llargada = Llargada - 1;
+			
+
+			else
+			{
+
+				palindrom = false;
+
+				break;
+			}
+		}
+
+		if (palindrom == true)
+		
+			Console.WriteLine("El Missatge si es un palindrom");
+		
+		else if (palindrom == false)
+		
+			Console.WriteLine("El Missatge no es un palindrom");
+		
+
+
+	}
+}

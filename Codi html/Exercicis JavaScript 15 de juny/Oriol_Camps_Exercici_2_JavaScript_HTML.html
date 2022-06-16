@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+		<title>Exercici 2 JavaScript</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-10">
+					<div class="radio">
+						<label>
+							<input type="radio" name="opcionsRadio" id="opcionsRadio1" value="option1" onclick="colorVermell()">
+							Vermell
+						</label><br>
+						<label>
+							<input type="radio" name="opcionsRadio" id="opcionsRadio2" value="option2" onclick="colorCian()">
+							Blau
+						</label><br>
+						<label>
+							<input type="radio" name="opcionsRadio" id="opcionsRadio3" value="option3" onclick="colorGroc()">
+							Groc
+						</label><br>
+						<label>
+							<input type="radio" name="opcionsRadio" id="opcionsRadio4" value="option4" onclick="colorVerd()">
+							Verd
+						</label><br>
+						<label>
+							<input type="radio" name="opcionsRadio" id="opcionsRadio5" value="option5" onclick="colorBlanc()">
+							Blanc
+						</label><br>
+					</div>
+				</div>
+				<div class="col-2" id="capa">
+					<div class="radio">
+						<label>
+							<input type="radio" name="opcionsRadio1" id="opcionsRadio1" value="option1" onclick="capa()">
+							Selecciona aquesta opció per modificar el color de només aquesta porció de la pantalla.
+						</label>
+						<label>
+							<input type="radio" name="opcionsRadio1" id="opcionsRadio2" value="option2" onclick="nocapa()">
+							Selecciona aquesta opció per modificar el color de tota la pantalla.
+						</label>
+					</div>
+				</div>
+			</div>
+			<script src="js/Exercici2.js"></script>
+		</div>
+	</body>
+</html>

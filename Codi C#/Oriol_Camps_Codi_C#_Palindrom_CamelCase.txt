@@ -1,0 +1,90 @@
+﻿string exemple = "a b";
+        char[] EXEMPLE;
+		EXEMPLE = exemple.ToCharArray();
+		char Espai = EXEMPLE[1];                //Una assignació per guardar el símbol del espai
+		
+		char [] LletraMin = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+		char [] LletraMaj = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+		bool EspaiActiu = false;
+		int i_array = 0;
+        
+        string missatge;
+
+		missatge = Console.ReadLine();
+
+		bool palindrom = true;
+
+		int Llargada = missatge.Length;
+
+		char[] Missatge;
+		Missatge = missatge.ToCharArray();
+
+		for (int i = 0; i <= Llargada - 1; i++)
+		{
+			if (Missatge[i] == Missatge[Llargada - 1])
+			
+				Llargada = Llargada - 1;
+			
+
+			else
+			{
+
+				palindrom = false;
+
+				break;
+			}
+		}
+
+		if (palindrom == true)
+		
+			Console.WriteLine("El Missatge si es un palindrom");
+		
+		else if (palindrom == false)
+		
+			Console.WriteLine("El Missatge no es un palindrom");
+    
+        
+        char [] ArrayChar = new char [Missatge.Length];
+        
+        for (int j=0 ; j <= Missatge.Length ; j++)      //El bucle acaba quan s'han llegit tots els espais del char array Missatge. En cada increment de j es mira si hi ha un espai o una lletra per assignar.
+        {
+            if (Missatge[j] != Espai)
+            {
+                if (EspaiActiu == false)        //Indica que abans no hi ha hagut un espai
+                {
+                    for(int k=0; k <= LletraMin.Length; k++)        //En aquest bucle es mira les lletres del abecedari en majúscula i en minúscula una a una per saber amb quina coincideix Missatge(j). En aquest cas, s'ha d'assignar una lletra en minúscula
+                    {
+                         if (Missatge[j] == LletraMin[k])
+                             ArrayChar[i_array] = Missatge[j];
+                    
+                        else if (Missatge == LletraMaj[k])
+                             ArrayChar[i_array] = LletraMin[k];
+                     }
+                     
+                     i_array = i_array + 1;
+                }
+                
+                else if (EspaiActiu == true)        //En aquest cas hi havia un espai en Missatge(i-1), pel que la lletra a assignar ha d'estar en majúscula
+                {
+                    for(int k=0; k <= LletraMaj.Length; k++)
+                    {
+                        if (Missatge[j] == LletraMaj[k])
+                            ArrayChar[i_array] = Missatge[j];
+                    
+                        else if (Missatge == LletraMin[k])
+                             ArrayChar[i_array] = LletraMin[k];
+                     }
+                     
+                     i_array = i_array + 1;
+                }
+
+	    	EspaiActiu = false;
+            }
+            
+            else if (Missatge[j] == Espai)
+            
+                EspaiActiu = true;                  //Quan es detecta un espai en el missatge s'activa la variable boolean. No s'assigna res a ArrayChar perquè no hi ha cap lletra per assignar
+            
+        }
+        
+        Console.WriteLine("El Missatge amb CamelCase es: {0}", ArrayChar);      //Es mostra el Missatge sense espais
